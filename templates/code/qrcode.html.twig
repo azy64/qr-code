@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}QR CODE GENERATOR FOR PARCELS{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>QR CODE GENERATOR FOR PARCELS ✅</h1>
+
+    <div style="text-align:center">
+        {{qrCode}}
+        <div>
+            <img src="{{path}}" />
+        </div>
+        <div>
+            <a href="{{path('app_code')}}"
+            style="padding:5px;background: red; color:white;
+            text-decoration:none;border-radius:3px;"
+            >HOME PAGE</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
