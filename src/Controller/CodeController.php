@@ -25,9 +25,11 @@ class CodeController extends AbstractController
     {
         $qrText = $request->request->get('qr-text');
         $client = $request->request->get('client');
+        $company = $request->request->get('company');
         $date = new \DateTime();
+        $text=$client.'***'.$company.'***'.$qrText;
         $namefile = $client."-".$date->getTimestamp();
-       $result = $generateQrCode->generateQr($namefile, $qrText);
+       $result = $generateQrCode->generateQr($namefile, $text);
         return $this->render('code/qrcode.html.twig', [
             'qrCode' => $qrText, 'path'=> $result->getDataUri(),
         ]);
